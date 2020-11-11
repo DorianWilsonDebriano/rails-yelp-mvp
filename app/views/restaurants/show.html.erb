@@ -1,0 +1,16 @@
+<div class="container bg-white p-3 mt-4">
+  <h2> <%= @restaurant.name %> </h2>
+  <p>Addess: <%= @restaurant.category %> </p>
+  <p>Addess: <%= @restaurant.address %> </p>
+  <p>Addess: <%= @restaurant.phone_number %> </p>
+
+  <h3>What people say about <%= @restaurant.name %> </h3>
+  <% @restaurant.reviews.each do |review| %>
+  <br>
+  <p><%= review.rating %>. <%= review.content %></p>
+  <br>
+  <% end %>
+  <%= link_to "leave a review", new_restaurant_review_path(@restaurant) %>
+  <br>
+  <%= link_to 'Back', restaurants_path %>
+</div>
